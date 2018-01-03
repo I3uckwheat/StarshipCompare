@@ -1,0 +1,7 @@
+table, th, td {
+  border: 1px solid black;
+}
+
+#compareTable {
+  margin-top: 40px;
+}
