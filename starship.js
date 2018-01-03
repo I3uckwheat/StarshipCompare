@@ -14,3 +14,8 @@ function run(genFunc){
     return Promise.reject(ex);
   }
 }
+
+function *getStarshipData(){
+  const ship1 = yield fetch("https://swapi.co/api/starships/" + document.getElementById("ships1").value)
+  console.log(ship1.json())
+}
