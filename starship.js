@@ -67,6 +67,5 @@ function highlightLargerValues(){
     } else {
       row[2].setAttribute("style", "background-color: red;");
     }
-
   }
 }
