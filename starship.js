@@ -1,3 +1,9 @@
+document.getElementById("compare").addEventListener("click", () => {
+  run(compareStarships);
+})
+
+//***************************************************************
+
 function run(genFunc){
   const genObject = genFunc();
 
@@ -15,7 +21,13 @@ function run(genFunc){
   }
 }
 
-function *getStarshipData(){
-  const ship1 = yield fetch("https://swapi.co/api/starships/" + document.getElementById("ships1").value)
-  console.log(ship1.json())
+function *compareStarships(){
+  let ship1 = yield fetch("https://swapi.co/api/starships/" + document.getElementById("ships1").value);
+  let ship2 = yield fetch("https://swapi.co/api/starships/" +  document.getElementById("ships2").value);
+
+  ship1 = yield ship1.json()
+  ship2 = yield ship2.json()
+
+  console.log(ship1, ship2)
+
 }
