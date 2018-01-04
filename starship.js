@@ -29,6 +29,7 @@ function *compareStarships(){
   ship2Obj = yield ship2.json()
 
   fillStarshipTable(ship1Obj, ship2Obj);
+  highlightLargerValues();
 }
 
 
@@ -49,4 +50,23 @@ function fillStarshipTable(ship1, ship2){
     cargo[j].textContent      = ship.cargo_capacity;
     passengers[j].textContent = ship.passengers;
   })
+}
+
+function highlightLargerValues(){
+  const tableRows = document.getElementById("compareTable").rows
+
+  for(let i = 2; i < tableRows.length; i++){
+    const row = tableRows[i].children;
+    const ship1Value = Number(row[1].textContent);
+    const ship2value = Number(row[2].textContent);
+
+    if(ship1Value === ship2value) {
+      continue;
+    } else if (ship1Value > ship2value){
+      row[1].setAttribute("style", "background-color: red;");
+    } else {
+      row[2].setAttribute("style", "background-color: red;");
+    }
+
+  }
 }
