@@ -33,20 +33,17 @@ function *compareStarships(){
 
 function fillStarshipTable(ship1, ship2){
   const ships = [ship1, ship2]
-  const tableRows = document.getElementById("compareTable").rows;
-  const names = tableRows[1].children;
-  const cost = tableRows[2].children;
-  const speed = tableRows[3].children;
-  const cargo = tableRows[4].children;
-  const passangers = tableRows[5].children;
-
-  console.log(ship1);
+  const names = document.getElementById("name").children;
+  const cost = document.getElementById("cost").children;
+  const speed = document.getElementById("speed").children;
+  const cargo = document.getElementById("cargo").children;
+  const passengers = document.getElementById("passengers").children;
 
   for(let i = 1; i <= 2; i++){
     names[i].textContent = ships[i - 1].name
     cost[i].textContent = ships[i - 1].cost_in_credits;
     speed[i].textContent = ships[i - 1].max_atmosphering_speed;
     cargo[i].textContent = ships[i - 1].cargo_capacity;
-    passangers[i].textContent = ships[i - 1].passengers;
+    passengers[i].textContent = ships[i - 1].passengers;
   }
 }
