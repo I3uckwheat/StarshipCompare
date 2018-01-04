@@ -25,10 +25,10 @@ function *compareStarships(){
   let ship1 = yield fetch("https://swapi.co/api/starships/" + document.getElementById("ships1").value);
   let ship2 = yield fetch("https://swapi.co/api/starships/" +  document.getElementById("ships2").value);
 
-  ship1 = yield ship1.json()
-  ship2 = yield ship2.json()
+  ship1Obj = yield ship1.json()
+  ship2Obj = yield ship2.json()
 
-  fillStarshipTable(ship1, ship2);
+  fillStarshipTable(ship1Obj, ship2Obj);
 }
 
 function fillStarshipTable(ship1, ship2){
